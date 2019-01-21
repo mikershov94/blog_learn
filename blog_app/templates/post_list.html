@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+	{{ block.super }}
+{% endblock title %}
+
+{% block content %}
+	<div>
+		<h1><a href="">My Blog</a></h1>
+	</div>
+	<div>
+		{% for p in posts %}
+			<p>published: {{ p.published_date }}</p>
+			<h1>{{ p.title }}</h1>
+			<p>{{ p.text|linebreaksbr }}</p>
+		{% endfor %}
+	</div>
+{% endblock content %}
